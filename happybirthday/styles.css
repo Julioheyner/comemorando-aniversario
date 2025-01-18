@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo geral da página */
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #FFF;
+    text-align: center;
+    overflow: hidden;
+}
+/* Texto para a data */
+p {
+    font-size: 22px;
+    color: #ffffffa6;
+    font-weight: 510;
+    margin-top: 10px;
+    animation: fadeIn 2s ease-out forwards;
+    opacity: 0;
+    animation-delay: 1.5s;
+    padding: 15px;
+}
+
+/* Caixa de comemoração */
+.celebration-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 90vw; 
+    max-height: 90vh; 
+    animation: fadeIn 2s ease-out;
+    margin-bottom: 20px;
+    overflow: auto; 
+}
+
+/* Imagem do bolo */
+.bolo {
+    width: 100%; 
+    height: auto; 
+    max-width: 300px;
+    max-height: 300px; 
+    margin: 0 auto 20px;
+    animation: wave 2s infinite ease-in-out;
+    border-radius: 15px;
+}
+
+/* Texto de boas-vindas */
+.welcome-text {
+    font-size: 26px;
+    font-weight: 570;
+    color: #ffeb3b;
+    animation: slideIn 2s ease-out forwards;
+    opacity: 0;
+    animation: piscar 3s infinite;
+}
+
+/* Mensagem adicional */
+.message {
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 500;
+    margin-top: 10px;
+    animation: fadeIn 2s ease-out forwards;
+    opacity: 0;
+    animation-delay: 1.5s;
+}
+
+/* Botão para tocar o áudio */
+.audio-button {
+    margin-top: 20px;
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    background: linear-gradient(45deg, #ff6f61, #ff9800);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(255, 105, 135, 0.3);
+    transition: background 0.3s, transform 0.2s;
+}
+.audio-button:hover {
+    background: linear-gradient(45deg, #ff3d3d, #ff6f00);
+    transform: scale(1.05);
+}
+
+/* Animações para os confetes */
+.confete {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: confeteAnim 5s linear infinite;
+}
+
+/* Animações de entrada */
+@keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(3deg); }
+}
+@keyframes slideIn {
+    0% { transform: translateY(-20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes confeteAnim {
+    0% { transform: translateY(-100vh) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); 
+    }
+}
+
+@keyframes piscar {
+    0%, 100% {
+       opacity: 1; /* Totalmente visível */
+     }
+      50% {
+        opacity: 0; /* Invisível */
+      }
+    }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    /* Caixa de comemoração */
+    .celebration-box {
+        padding: 20px;
+        max-width: 100%; 
+        max-height: 85vh;
+    }
+
+    /* Texto */
+    .welcome-text {
+        font-size: 22px;
+    }
+    .message {
+        font-size: 16px;
+    }
+
+    /* Botão de áudio */
+    .audio-button {
+        font-size: 14px;
+        padding: 10px 30px;
+    }
+
+    /* Imagem do bolo */
+    .bolo {
+        max-width: 300px; 
+        max-height: 300px; 
+    }
+}
+
+@media (max-width: 480px) {
+    /* Caixa de comemoração */
+    .celebration-box {
+        padding: 15px;
+    }
+
+    /* Texto */
+    .welcome-text {
+        font-size: 22px;
+    }
+    .message {
+        font-size: 16px;
+    }
+
+    /* Botão de áudio */
+    .audio-button {
+        font-size: 16px;
+        padding: 10px 30px;
+    } 
+
+    /* Imagem do bolo */
+    .bolo {
+        max-width: 300px;
+        max-height: 300px;
+    }
+}
+
+
